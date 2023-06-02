@@ -1,16 +1,16 @@
-import { Nunito } from 'next/font/google';
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Navbar from './components/navbar/Navbar';
-import ClientOnly from './components/ClientOnly';
-import Modal from './components/modals/Modal';
+import { Nunito } from "next/font/google";
+import "./globals.css";
+import { Inter } from "next/font/google";
+import Navbar from "./components/navbar/Navbar";
+import ClientOnly from "./components/ClientOnly";
+import RegisterModal from "./components/modals/RegisterModal";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'globetrottr',
-  description: 'the rental app you call home',
-}
+  title: "globetrottr",
+  description: "the rental app you call home",
+};
 
 const font = Nunito({
   subsets: ["latin"],
@@ -19,17 +19,17 @@ const font = Nunito({
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
-          <Modal />
+          <RegisterModal />
           <Navbar />
         </ClientOnly>
         {children}
-        </body>
+      </body>
     </html>
-  )
+  );
 }
