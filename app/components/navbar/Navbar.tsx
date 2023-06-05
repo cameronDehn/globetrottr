@@ -1,19 +1,17 @@
 "use client";
 
-import { User } from "@prisma/client";
+import { SafeUser } from "@/app/types";
 import Container from "../Container";
+import Categories from "./Categories";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 
 interface NavBarProps {
-  currentUser?: User | null;
+  currentUser?: SafeUser | null;
 }
 
-const Navbar: React.FC<NavBarProps> = ({
-  currentUser
-}) => {
-
+const Navbar: React.FC<NavBarProps> = ({ currentUser }) => {
   return (
     <div className="fixed w-full bg-white shadow-sm">
       <div
@@ -33,10 +31,11 @@ const Navbar: React.FC<NavBarProps> = ({
           >
             <Logo />
             <Search />
-            <UserMenu currentUser={currentUser}/>
+            <UserMenu currentUser={currentUser} />
           </div>
         </Container>
       </div>
+      <Categories />
     </div>
   );
 };
