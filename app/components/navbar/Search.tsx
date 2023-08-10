@@ -106,11 +106,11 @@ const Search = () => {
           <div
             className="
                     p-2
-                    bg-rose-500
+                    bg-orange-300
                     rounded-full
                     text-white"
           >
-            <BiSearch size={18} />
+            <BiSearch size={16} />
           </div>
         </div>
       </div>
